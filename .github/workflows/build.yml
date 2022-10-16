@@ -41,13 +41,13 @@ jobs:
             linux/arm64
           push: true
           tags:
-            scottyhardy/docker-remote-desktop:latest,
-            scottyhardy/docker-remote-desktop:ubuntu-${{ env.ubuntu_codename }},
-            scottyhardy/docker-remote-desktop:ubuntu-${{ env.ubuntu_version }}
+            samsabra/docker-remote-desktop:latest,
+            samsabra/docker-remote-desktop:ubuntu-${{ env.ubuntu_codename }},
+            samsabra/docker-remote-desktop:ubuntu-${{ env.ubuntu_version }}
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: scottyhardy/docker-remote-desktop
+          repository: samsabra/docker-remote-desktop
