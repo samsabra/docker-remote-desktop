@@ -48,6 +48,7 @@ RUN apt-get update \
         xubuntu-icon-theme \
         nitrogen \
         i3 \
+        kupfer \
     && rm -rf /var/lib/apt/lists/*
     
 
