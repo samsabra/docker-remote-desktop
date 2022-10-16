@@ -49,6 +49,7 @@ RUN apt-get update \
         nitrogen \
         i3 \
     && rm -rf /var/lib/apt/lists/*
+    
 
 RUN sed -i -E 's/^; autospawn =.*/autospawn = yes/' /etc/pulse/client.conf \
     && [ -f /etc/pulse/client.conf.d/00-disable-autospawn.conf ] && sed -i -E 's/^(autospawn=.*)/# \1/' /etc/pulse/client.conf.d/00-disable-autospawn.conf || : \
