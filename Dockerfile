@@ -46,6 +46,7 @@ RUN apt-get update \
         xorgxrdp \
         xrdp \
         xubuntu-icon-theme \
+        nitrogen \
         i3 \
     && rm -rf /var/lib/apt/lists/*
 
