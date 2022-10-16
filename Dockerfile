@@ -46,6 +46,7 @@ RUN apt-get update \
         xorgxrdp \
         xrdp \
         xubuntu-icon-theme \
+        i3 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -E 's/^; autospawn =.*/autospawn = yes/' /etc/pulse/client.conf \
