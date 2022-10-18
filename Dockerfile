@@ -29,6 +29,8 @@ RUN git clone https://github.com/neutrinolabs/pulseaudio-module-xrdp.git /pulsea
 # Build the final image
 FROM ubuntu:$TAG
 
+RUN add-apt-repository ppa:regolith-linux/release
+
 RUN apt-get update \
     && DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
         dbus-x11 \
@@ -40,12 +42,13 @@ RUN apt-get update \
         pulseaudio-utils \
         sudo \
         x11-xserver-utils \
-        xfce4 \
-        xfce4-goodies \
-        xfce4-pulseaudio-plugin \
+        regolith-desktop-standard \
+        # xfce4 \
+        # xfce4-goodies \
+        # xfce4-pulseaudio-plugin \        
         xorgxrdp \
         xrdp \
-        xubuntu-icon-theme \
+        # xubuntu-icon-theme \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -E 's/^; autospawn =.*/autospawn = yes/' /etc/pulse/client.conf \
