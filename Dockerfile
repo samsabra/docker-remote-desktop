@@ -51,7 +51,7 @@ RUN apt-get update \
 
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt add-apt-repository ppa:regolith-linux/release
+RUN add-apt-repository ppa:regolith-linux/release
 RUN apt install -y --no-install-recommends regolith-desktop-standard
     
 
