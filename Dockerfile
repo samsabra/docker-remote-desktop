@@ -43,13 +43,14 @@ RUN apt-get update \
         sudo \
         x11-xserver-utils \
         regolith-desktop-standard \
-        # xfce4 \
-        # xfce4-goodies \
-        # xfce4-pulseaudio-plugin \        
         xorgxrdp \
         xrdp \
-        # xubuntu-icon-theme \
+        xubuntu-icon-theme \
+        nitrogen \
+        kupfer \
+
     && rm -rf /var/lib/apt/lists/*
+    
 
 RUN sed -i -E 's/^; autospawn =.*/autospawn = yes/' /etc/pulse/client.conf \
     && [ -f /etc/pulse/client.conf.d/00-disable-autospawn.conf ] && sed -i -E 's/^(autospawn=.*)/# \1/' /etc/pulse/client.conf.d/00-disable-autospawn.conf || : \
